@@ -1,0 +1,9 @@
+{
+  "domain": "alca",
+  "ipaddress": "127.0.0.1",
+  "timezone": "Europe/Rome",
+  "run_list": [
+    "recipe[netrumba]"
+  ]
+}
+

@@ -1,0 +1,10 @@
+= DESCRIPTION:
+
+This cookbook install common used server package as ntp and snmpd
+
+= REQUIREMENTS:
+
+
+= ATTRIBUTES: 
+
+= USAGE:

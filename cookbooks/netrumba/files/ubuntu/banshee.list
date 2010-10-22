@@ -1,0 +1,3 @@
+## banshee stable
+deb http://ppa.launchpad.net/banshee-team/ppa/ubuntu maverick main
+# deb-src http://ppa.launchpad.net/banshee-team/ppa/ubuntu karmic main
