@@ -26,6 +26,8 @@ bash 'add-third-party-ppa-repo' do
       add-apt-repository ppa:zedtux/rhythmbox-albumartsearch
       add-apt-repository ppa:gma500/ppa
       add-apt-repository ppa:gma500/fix
+      add-apt-repository ppa:chromium-daily/ppa
+      add-apt-repository ppa:ubuntu-mozilla-daily/ppa
     EOC
 end
 
@@ -35,4 +37,22 @@ end
 
 cookbook_file '/etc/apt/sources.list.d/medibuntu.list' do
    source 'medibuntu.list'
- end
+end
+
+package 'medibuntu-keyring'
+
+bash 'add-google-repo-key' do
+  user "root"
+    code <<-EOC
+	wget -q -O - https://dl-ssl.google.com/linux/linux_signing_key.pub | apt-key add -
+    EOC
+end
+
+cookbook_file '/etc/apt/sources.list.d/google.list' do
+   source 'google.list'
+end
+
+cookbook_file '/etc/apt/sources.list.d/skype.list' do
+   source 'skype.list'
+end
+
