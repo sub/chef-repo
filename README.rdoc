@@ -1,11 +1,13 @@
 == chef-repo
 
-This is my personal chef-repo, actually I use it to restore my Ubuntu install to my netbook.
+This is my personal {chef-repo}[http://www.opscode.com/chef] repository, actually I use it to restore my Ubuntu install into my netbook.
 
 == HOWTO
 
 Before executing your recipes you have to run the script initial-config.sh
-which install rubygems and chef gem.
+which installs rubygems (via src) and the chef gem (via rubygem).
 
+== Credits
 
-
+* sub @alcacoop
+* thanks to @lucagreco for the original skel!
