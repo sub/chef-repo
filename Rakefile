@@ -1,5 +1,5 @@
 #task :test_remote do
-#   `thor chef_solo:run_ssh sheldon2.dev -u root -j nodes/development.json`
+#   `thor chef_solo:run_ssh host.dev -u root -j nodes/development.json`
 #end
 
 task :netrumba do
