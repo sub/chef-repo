@@ -1,3 +1,4 @@
+# -*- coding: utf-8 -*-
 #
 # Cookbook Name:: netrumba
 # Recipe:: repository
@@ -31,6 +32,13 @@ bash 'add-third-party-ppa-repo' do
     EOC
 end
 
+bash 'add-google-repo-key' do
+  user "root"
+    code <<-EOC
+	wget -q -O - https://dl-ssl.google.com/linux/linux_signing_key.pub | apt-key add -
+    EOC
+end
+
 cookbook_file '/etc/apt/sources.list.d/google-talkplugin.list' do
    source 'google-talkplugin.list'
 end
@@ -39,12 +47,10 @@ cookbook_file '/etc/apt/sources.list.d/medibuntu.list' do
    source 'medibuntu.list'
 end
 
-package 'medibuntu-keyring'
-
-bash 'add-google-repo-key' do
+bash 'add-medibuntu-repo-key' do
   user "root"
     code <<-EOC
-	wget -q -O - https://dl-ssl.google.com/linux/linux_signing_key.pub | apt-key add -
+        sudo apt-get --yes --quiet --allow-unauthenticated install medibuntu-keyring
     EOC
 end
 
