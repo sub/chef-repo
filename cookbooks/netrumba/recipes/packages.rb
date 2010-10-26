@@ -91,6 +91,14 @@ POULSBO = ['poulsbo-driver-2d',
            'poulsbo-config'
           ].each {|file| package file}
 
+bash 'install-rubygems' do
+  code <<-EOC
+    user "root"
+      gem install capistrano chef cucumber gemcutter git jeweler jsc json json_pure mongo mongrel rails rake sinatra slideshow sqlite3-ruby xmpp4r --no-ri --no-rdoc
+      gem install slideshow -v=0.6.1 --no-ri --no-rdoc
+  EOC
+end
+
 ## EXTRA PACKAGES
 #package 'easytag'
 #package 'ejabberd'
